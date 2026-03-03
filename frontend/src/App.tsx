@@ -12,6 +12,8 @@ import SettingsPage from './pages/SettingsPage'
 import SavedWorkoutsPage from './pages/SavedWorkoutsPage'
 import SavedMealsPage from './pages/SavedMealsPage'
 import ExercisePageNew from './pages/ExercisePageNew'
+import LogsPage from './pages/LogsPage'
+
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuthStore()
   return isAuthenticated ? <>{children}</> : <Navigate to="/login" replace />
@@ -34,24 +36,24 @@ export default function App() {
         }}
       />
       <Routes>
-        <Route path="/"          element={<Navigate to="/dashboard" replace />} />
-        <Route path="/login"     element={<AuthPage mode="login" />} />
-        <Route path="/signup"    element={<AuthPage mode="signup" />} />
+        <Route path="/"           element={<Navigate to="/dashboard" replace />} />
+        <Route path="/login"      element={<AuthPage mode="login" />} />
+        <Route path="/signup"     element={<AuthPage mode="signup" />} />
         <Route path="/onboarding" element={<ProtectedRoute><OnboardingPage /></ProtectedRoute>} />
-        <Route path="settings"   element={<SettingsPage />} />
-        <Route path="progress" element={<WeeklyProgressPage />} />
+
         <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
-          <Route index            element={<DashboardHome />} />
-          <Route path="meals"     element={<MealsPage />} />
-          <Route path="exercise"  element={<ExercisePageNew />} />
-          <Route path="profile"   element={<ProfilePage />} />
-          <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
-        <Route path="saved-meals" element={<SavedMealsPage />} />
-         <Route path="workouts" element={<SavedWorkoutsPage />} />
-  
-</Route>
+          <Route index                element={<DashboardHome />} />
+          <Route path="meals"         element={<MealsPage />} />
+          <Route path="exercise"      element={<ExercisePageNew />} />
+          <Route path="profile"       element={<ProfilePage />} />
+          <Route path="progress"      element={<WeeklyProgressPage />} />
+          <Route path="settings"      element={<SettingsPage />} />
+          <Route path="workouts"      element={<SavedWorkoutsPage />} />
+          <Route path="saved-meals"   element={<SavedMealsPage />} />
+          <Route path="logs"          element={<LogsPage />} />
         </Route>
-        
+
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </BrowserRouter>
   )

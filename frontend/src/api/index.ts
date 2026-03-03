@@ -24,26 +24,26 @@ api.interceptors.response.use(
   }
 )
 
-// ── Auth ─────────────────────────────────────────────────────────────────────
+// Auth
 export const authAPI = {
   signup: (data: object)  => api.post('/auth/signup', data),
   login:  (data: object)  => api.post('/auth/login',  data),
   me:     ()              => api.get('/auth/me'),
 }
 
-// ── User ─────────────────────────────────────────────────────────────────────
+// User
 export const userAPI = {
-  getProfile:    ()           => api.get('/user/profile'),
+  getProfile:    ()             => api.get('/user/profile'),
   updateProfile: (data: object) => api.put('/user/profile', data),
-  getStats:      ()           => api.get('/user/stats'),
+  getStats:      ()             => api.get('/user/stats'),
 }
 
-// ── Dashboard ────────────────────────────────────────────────────────────────
+// Dashboard
 export const dashboardAPI = {
   getSummary: () => api.get('/dashboard/summary'),
 }
 
-// ── Meals ────────────────────────────────────────────────────────────────────
+// Meals
 export const mealsAPI = {
   getDayPlan:   (params?: object)        => api.get('/meals/day-plan', { params }),
   search:       (params: object)         => api.get('/meals/search', { params }),
@@ -52,7 +52,7 @@ export const mealsAPI = {
   getLogs:      (limit?: number)         => api.get('/meals/logs', { params: { limit } }),
 }
 
-// ── Exercise ─────────────────────────────────────────────────────────────────
+// Exercise
 export const exerciseAPI = {
   getSuggestions:    (params?: object)      => api.get('/exercise/suggestions', { params }),
   getWeeklyPlan:     (params?: object)      => api.get('/exercise/weekly-plan', { params }),
@@ -65,11 +65,11 @@ export const exerciseAPI = {
   getSaved:          ()                     => api.get('/exercise/saved'),
   deleteSaved:       (id: string)           => api.delete(`/exercise/saved/${id}`),
   logExercise:       (data: object)         => api.post('/exercise/log', data),
-  getExerciseLogs:   (days?: number)        => api.get('/exercise/logs', { params: { days } }),
+  getExerciseLogs:   (limit?: number)       => api.get('/exercise/logs', { params: { limit } }),
   getWeeklyStats:    ()                     => api.get('/exercise/weekly-stats'),
 }
 
-// ── Logs ─────────────────────────────────────────────────────────────────────
+// Logs
 export const logsAPI = {
   create: (data: object)      => api.post('/logs', data),
   getAll: (type?: string)     => api.get('/logs', { params: { type } }),
