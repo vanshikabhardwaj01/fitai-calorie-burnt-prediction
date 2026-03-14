@@ -157,15 +157,15 @@ npm install
 npm run dev
 
 
-## 🚀 Deployment
+ Deployment
 
-### Backend Deployment (Railway/Render)
+ Backend Deployment (Railway/Render)
 1. Push code to GitHub
 2. Connect to Railway/Render
 3. Add environment variables
 4. Deploy
 
-### Frontend Deployment (Vercel)
+Frontend Deployment (Vercel)
 1. Push code to GitHub
 2. Import project to Vercel
 3. Add environment variable: `VITE_API_URL=https://your-backend-url.com`
@@ -174,7 +174,7 @@ npm run dev
 ---
 
 
-## 👨‍💻 Author
+👨‍💻 Author
 
 **Vanshika Bhardwaj**
 - GitHub: [@vanshikabhardwaj01](https://github.com/vanshikabhardwaj01)
