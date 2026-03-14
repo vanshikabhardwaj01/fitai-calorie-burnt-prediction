@@ -3,32 +3,27 @@ import { Outlet, NavLink, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Settings } from 'lucide-react'
 import { useAuthStore } from '../store/authStore'
-import { useThemeStore } from '../store/themeStore'
 import { TrendingUp } from 'lucide-react'
-import { Moon, Sun } from 'lucide-react'
-import { Heart } from 'lucide-react' 
+import { Heart } from 'lucide-react'
 import {
-  LayoutDashboard, Utensils, Dumbbell, Bookmark,
+  LayoutDashboard, Utensils, Dumbbell,
   ClipboardList, User, LogOut, Zap, Menu, X, ChevronRight
 } from 'lucide-react'
 
 const NAV_ITEMS = [
-  { to: '/dashboard',          icon: LayoutDashboard, label: 'Overview',        end: true },
-  { to: '/dashboard/meals',    icon: Utensils,        label: 'Meal Planner' },
-  { to: '/dashboard/exercise', icon: Dumbbell,        label: 'Exercise' },
-  { to: '/dashboard/progress', icon: TrendingUp,      label: 'Weekly Progress' },
-  { to: '/dashboard/workouts', icon: Bookmark,        label: 'Saved Workouts' },
-  { to: '/dashboard/saved-meals', icon: Heart,        label: 'Saved Meals' },  // NEW
-  { to: '/dashboard/logs',     icon: ClipboardList,   label: 'Activity Logs' },
-  { to: '/dashboard/profile',  icon: User,            label: 'Profile' },
-  { to: '/dashboard/settings', icon: Settings,        label: 'Settings' },
+  { to: '/dashboard',             icon: LayoutDashboard, label: 'Overview',        end: true },
+  { to: '/dashboard/meals',       icon: Utensils,        label: 'Meal Planner' },
+  { to: '/dashboard/exercise',    icon: Dumbbell,        label: 'Exercise' },
+  { to: '/dashboard/progress',    icon: TrendingUp,      label: 'Weekly Progress' },
+  { to: '/dashboard/saved-meals', icon: Heart,           label: 'Saved Meals' },
+  { to: '/dashboard/logs',        icon: ClipboardList,   label: 'Activity Logs' },
+  { to: '/dashboard/profile',     icon: User,            label: 'Profile' },
+  { to: '/dashboard/settings',    icon: Settings,        label: 'Settings' },
 ]
-
 
 export default function DashboardLayout() {
   const { user, logout } = useAuthStore()
   const navigate = useNavigate()
-  const { theme, toggleTheme } = useThemeStore()
   const [mobileOpen, setMobileOpen] = useState(false)
 
   function handleLogout() {
@@ -95,14 +90,6 @@ export default function DashboardLayout() {
           </div>
         </div>
       )}
-      <div className="px-3 pb-3">
-  <button 
-    onClick={toggleTheme}
-    className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-white/40 hover:text-white hover:bg-white/[0.04] transition-all">
-    {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
-    {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-  </button>
-</div>
 
       {/* Logout */}
       <div className="px-3 pb-4">
@@ -165,6 +152,4 @@ export default function DashboardLayout() {
       </div>
     </div>
   )
-  
-  
 }
