@@ -2,7 +2,7 @@
 AI-powered fitness & calorie tracking app
 
 ## Live Demo
-- Youtube Video- https://youtu.be/zTVK5-OOd28?si=sXCxXhSsUvql9us7
+- Demo- https://youtu.be/zTVK5-OOd28
 - Frontend: https://fitai-calorie-burnt-prediction.vercel.app
 - Backend: https://fitai-calorie-burnt-prediction.onrender.com
 
