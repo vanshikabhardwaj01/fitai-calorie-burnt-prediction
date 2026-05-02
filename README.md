@@ -15,7 +15,7 @@ AI-powered fitness & calorie tracking app
 
 A full-stack calorie burn prediction and fitness tracking application with personalized meal planning, exercise recommendations, and comprehensive health analytics.
 
-## 🎯 Project Overview
+##  Project Overview
 
 FitAI is an intelligent health and fitness platform that uses AI-powered calculations to help users track calories, plan meals, and optimize workouts based on their individual body metrics and fitness goals.
 
@@ -30,7 +30,7 @@ FitAI is an intelligent health and fitness platform that uses AI-powered calcula
 ---
 
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 fitai/
